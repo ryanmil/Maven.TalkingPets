@@ -1,5 +1,7 @@
 package io.zipcoder.polymorphism;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -39,8 +41,10 @@ public class MainApplication {
             }
         }
 
+        Arrays.sort(pets);
+
         for (int i = 0; i < numberOfPets; i++) {
-            System.out.println(pets[i].getClass().getSimpleName() + " " + pets[i].getName() + " says:");
+            System.out.print(pets[i].getClass().getSimpleName() + " " + pets[i].getName() + " says: ");
             System.out.println(pets[i].speak() + "\n");
         }
 
