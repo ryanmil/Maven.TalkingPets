@@ -2,7 +2,7 @@ package io.zipcoder.polymorphism;
 
 public abstract class Pet {
 
-    String name;
+    private String name;
 
     public Pet(String name) {
         this.name = name;

@@ -14,17 +14,35 @@ public class MainApplication {
         System.out.println("How many pets do you have");
         int numberOfPets = Integer.parseInt(scanner.nextLine());
 
-        String[] petTypes = new String[numberOfPets];
-        for (int i = 0; i < petTypes.length; i++) {
+        Pet[] pets = new Pet[numberOfPets];
+
+        for (int i = 0; i < numberOfPets; i++) {
             System.out.println("What type of pet is pet #" + (i + 1));
-            petTypes[i] = scanner.nextLine();
+            String petType = scanner.nextLine();
 
             System.out.println("What is this pet's name?");
             String petName = scanner.nextLine();
+
+            switch (petType) {
+                case "Dog":
+                    pets[i] = new Dog(petName);
+                    break;
+                case "Cat":
+                    pets[i] = new Cat(petName);
+                    break;
+                case "Bunny":
+                    pets[i] = new Bunny(petName);
+                    break;
+                default:
+                    System.out.println("Error");
+                    break;
+            }
         }
 
-
-
+        for (int i = 0; i < numberOfPets; i++) {
+            System.out.println(pets[i].getClass().getSimpleName() + " " + pets[i].getName() + " says:");
+            System.out.println(pets[i].speak() + "\n");
+        }
 
     }
 }
