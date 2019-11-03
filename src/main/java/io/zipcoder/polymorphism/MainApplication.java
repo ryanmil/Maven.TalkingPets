@@ -41,7 +41,9 @@ public class MainApplication {
             }
         }
 
-        Arrays.sort(pets);
+        PetComparator comparator = new PetComparator();
+
+        Arrays.sort(pets, comparator);
 
         for (int i = 0; i < numberOfPets; i++) {
             System.out.print(pets[i].getClass().getSimpleName() + " " + pets[i].getName() + " says: ");
